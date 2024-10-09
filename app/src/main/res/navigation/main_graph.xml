@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/myqrFragment"
+        android:name="com.example.gestindocumentariacpsaa.presentation.ui.myqr.MyQRFragment"
+        android:label="fragment_myqr"
+        tools:layout="@layout/fragment_myqr" />
+    <fragment
+        android:id="@+id/asistenciaFragment"
+        android:name="com.example.gestindocumentariacpsaa.presentation.ui.asistencias.AsistenciaFragment"
+        android:label="asistencia_favorite"
+        tools:layout="@layout/fragment_asistencia" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.gestindocumentariacpsaa.presentation.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.gestindocumentariacpsaa.presentation.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/descansosMedicosFragment"
+        android:name="com.example.gestindocumentariacpsaa.presentation.ui.descansosMedicos.descansosMedicosFragment"
+        android:label="fragment_descansos_medicos"
+        tools:layout="@layout/fragment_descansos_medicos" />
+    <fragment
+        android:id="@+id/reportesFragment"
+        android:name="com.example.gestindocumentariacpsaa.presentation.ui.reportes.reportesFragment"
+        android:label="fragment_reportes"
+        tools:layout="@layout/fragment_reportes" />
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.example.gestindocumentariacpsaa.presentation.ui.ticketsCumpleaños.ticketsFragment"
+        android:label="fragment_tickets"
+        tools:layout="@layout/fragment_tickets" />
+</navigation>
