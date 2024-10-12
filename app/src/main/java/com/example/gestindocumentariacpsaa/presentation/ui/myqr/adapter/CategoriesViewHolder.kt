@@ -10,8 +10,6 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = ItemCategoriesBinding.bind(view)
 
     fun render(categories: CategoriesModel) {
-        binding.tvTitle.text = "Categoria : ${categories.categories}"
-        binding.tvCounter.text = "Total de animes : ${categories.count}"
         
     }
 }
