@@ -5,8 +5,7 @@ import com.example.gestindocumentariacpsaa.data.models.Response
 import com.example.gestindocumentariacpsaa.data.retrofit.RetrofitHelper
 import com.example.gestindocumentariacpsaa.data.retrofit.Services
 import com.example.gestindocumentariacpsaa.domain.Repository
-import com.example.gestindocumentariacpsaa.presentation.models.CategoriesModel
-import com.example.gestindocumentariacpsaa.presentation.models.HomeModel
+import com.example.gestindocumentariacpsaa.domain.model.PlantaModel
 
 class RepositoryImpl : Repository {
 
@@ -27,7 +26,7 @@ class RepositoryImpl : Repository {
         runCatching {
             apiService.getPlantas()
         }
-            .onSuccess { return it }
+            .onSuccess { return it}
             .onFailure { Log.e("Error", "Error de Servicio Plantas: ${it.message}") }
         return null
     }

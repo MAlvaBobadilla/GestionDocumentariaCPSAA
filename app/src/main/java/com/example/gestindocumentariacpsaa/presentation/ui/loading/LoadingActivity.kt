@@ -32,12 +32,10 @@ class LoadingActivity : AppCompatActivity() {
         initCount()
     }
 
-    private fun initCount(colaborador: String? = null) {
-        val colaborador = intent.getStringExtra("usuario")
+    private fun initCount() {
         lifecycleScope.launch {
             delay(3000)
             val i = Intent(this@LoadingActivity, MainActivity::class.java)
-            i.putExtra("usuario",colaborador)
             startActivity(i)
             finish()
         }

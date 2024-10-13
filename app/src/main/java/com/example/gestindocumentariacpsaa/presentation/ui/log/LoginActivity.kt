@@ -10,6 +10,8 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.example.gestindocumentariacpsaa.data.models.Response
+import com.example.gestindocumentariacpsaa.data.preferences.UserPreferences
 import com.example.gestindocumentariacpsaa.databinding.ActivityLoginBinding
 import com.example.gestindocumentariacpsaa.presentation.ui.loading.LoadingActivity
 import com.example.gestindocumentariacpsaa.presentation.utils.Messages
@@ -43,9 +45,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateTo(activity: Class<out AppCompatActivity>, usuario: String) {
+    private fun navigateTo(activity: Class<out AppCompatActivity>) {
         val i = Intent(this, activity)
-            .putExtra("usuario", usuario)
         startActivity(i)
         finish()
     }
@@ -73,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
                             false,
                             this@LoginActivity,
                             dataLogin.successMessage,
-                            dataLogin.user,
+                            dataLogin.colaborador,
                             LoadingActivity::class.java
                         )
                     }
@@ -86,12 +87,13 @@ class LoginActivity : AppCompatActivity() {
         state: Boolean,
         context: Context,
         message: String,
-        user: String,
+        colaborador:Response.ColaboradorInfo,
         activity: Class<out AppCompatActivity>
     ) {
         manageLoading(state)
         Messages.genericToast(context, message)
-        navigateTo(activity = activity, usuario = user)
+        navigateTo(activity = activity)
+        UserPreferences.setUser(this, usuario = colaborador)
     }
 
     private fun errorState(state: Boolean, context: Context, message: String) {

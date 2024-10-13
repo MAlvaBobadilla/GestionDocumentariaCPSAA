@@ -94,8 +94,9 @@
                     android:id="@+id/edtDocumento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
-                    android:hint="Documento de Identidad" />
+                    android:hint="Documento de Identidad"
+                    android:inputType="number"
+                    android:lines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,12 +105,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_camera"
-                android:contentDescription="Camera"
                 android:backgroundTint="@color/grey"
-                app:tint="@color/white"/>
+                android:contentDescription="Camera"
+                android:src="@drawable/ic_camera"
+                app:tint="@color/white" />
 
         </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlHoraManual"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtHoraManual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_time"
+                android:drawableTint="@color/grey"
+                android:hint="Hora Manual" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <CheckBox
             android:id="@+id/checkbox"
@@ -152,6 +171,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegistrar"

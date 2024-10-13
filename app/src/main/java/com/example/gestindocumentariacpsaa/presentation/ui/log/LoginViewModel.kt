@@ -43,7 +43,8 @@ class LoginViewModel : ViewModel() {
                         } else {
                             _loginResult.value = Success(
                                 successMessage = "BIENVENIDO ${response.colaborador!!.nombreCompleto}",
-                                user = response.colaborador!!.dni
+                                user = response.colaborador!!.dni,
+                                colaborador = response.colaborador!!
                             )
                         }
                     } catch (e: Exception) {
